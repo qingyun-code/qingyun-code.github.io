@@ -2,7 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2020/09/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://huanqgingyu.top/categories/index.html</loc>
+    
+    <lastmod>2020-09-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://huanqgingyu.top/about/index.html</loc>
+    
+    <lastmod>2020-09-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://huanqgingyu.top/link/index.html</loc>
+    
+    <lastmod>2020-09-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://huanqgingyu.top/list/index.html</loc>
+    
+    <lastmod>2020-09-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://huanqgingyu.top/tags/index.html</loc>
+    
+    <lastmod>2020-09-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://huanqgingyu.top/2020/09/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
     
     <lastmod>2020-09-01</lastmod>
     
@@ -10,30 +45,30 @@
   
 
   <url>
-    <loc>http://yoursite.com/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <loc>https://huanqgingyu.top/</loc>
+    <lastmod>2020-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>http://yoursite.com/tags/%E5%BC%80%E5%8F%91%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <loc>https://huanqgingyu.top/tags/%E5%BC%80%E5%8F%91%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/</loc>
+    <lastmod>2020-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <loc>https://huanqgingyu.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2020-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/Hexo/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <loc>https://huanqgingyu.top/tags/Hexo/</loc>
+    <lastmod>2020-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
