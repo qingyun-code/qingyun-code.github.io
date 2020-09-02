@@ -44,10 +44,15 @@
 <h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><hr>
 <p>关于hexo的使用可进入<a href="https://hexo.io/zh-cn/docs/">hexo使用文档</a>，里面详细记载了hexo的配置和操作命令，这样就能够更改博客的头像和名称等等啦。还有有关给hexo配置主题的问题，我将会在下个博客中详细介绍。</p>
 ]]></content>
+      <categories>
+        <category>开发基本技能</category>
+        <category>博客</category>
+        <category>Hexo</category>
+      </categories>
       <tags>
-        <tag>开发基本技能</tag>
         <tag>博客</tag>
         <tag>Hexo</tag>
+        <tag>安装</tag>
       </tags>
   </entry>
 </search>

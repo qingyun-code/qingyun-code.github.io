@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://huanqgingyu.top/2020/09/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
+    
+    <lastmod>2020-09-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://huanqgingyu.top/categories/index.html</loc>
     
     <lastmod>2020-09-02</lastmod>
@@ -36,13 +43,6 @@
     
   </url>
   
-  <url>
-    <loc>https://huanqgingyu.top/2020/09/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</loc>
-    
-    <lastmod>2020-09-01</lastmod>
-    
-  </url>
-  
 
   <url>
     <loc>https://huanqgingyu.top/</loc>
@@ -51,13 +51,6 @@
     <priority>1.0</priority>
   </url>
 
-  
-  <url>
-    <loc>https://huanqgingyu.top/tags/%E5%BC%80%E5%8F%91%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/</loc>
-    <lastmod>2020-09-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
   
   <url>
     <loc>https://huanqgingyu.top/tags/%E5%8D%9A%E5%AE%A2/</loc>
@@ -73,6 +66,34 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://huanqgingyu.top/tags/%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2020-09-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://huanqgingyu.top/categories/%E5%BC%80%E5%8F%91%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/</loc>
+    <lastmod>2020-09-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://huanqgingyu.top/categories/%E5%BC%80%E5%8F%91%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2020-09-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://huanqgingyu.top/categories/%E5%BC%80%E5%8F%91%E5%9F%BA%E6%9C%AC%E6%8A%80%E8%83%BD/%E5%8D%9A%E5%AE%A2/Hexo/</loc>
+    <lastmod>2020-09-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 </urlset>
