@@ -6,41 +6,13 @@
     <content><![CDATA[<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><hr>
 <p>&emsp;&emsp;博客：正式名称为网络日记，是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。<br>&emsp;&emsp;由于最近看了比较多的书和学习视屏后发现很多知识容易遗忘，并且很多技术上的难点当时想通了但是之后就很容易忘记。于是想着建个个人的博客站点来记录平时学到的知识和解决的难题并且也有助于技术的分享。<br>&emsp;&emsp;本教程主要讲述Hexo博客的安装，使用的操作系统为macOS，其他系统也是大同小异。此教程中的博客是部署到GitHub中，请先安装并且配置好GitHub。</p>
 <h3 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h3><hr>
-<p>先下载<a href="https://nodejs.org/en/">node.js</a>，点击可进入下载网址。官网界面如下：<br><img src= "/img/loading.gif" data-lazy-src="/2020/09/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/nodejs.jpeg"><br>点击如图所示的永久版本：<br><img src= "/img/loading.gif" data-lazy-src="/2020/09/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/nodejs2.jpeg"><br>下载完成后对其进行安装。<br>安装好后打开终端，输入如下命令进入root目录：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure>
-<p>输入如下命令测试nodejs有没有安装成功：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-<p>如果显示了版本好则说明nodejs安装成功。<br>本来是借助npm包管理器来安装，但是国内镜像速度比较慢，先输入如下命令安装淘宝镜像：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<p>输入如下命令验证cnpm是否安装成功：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm -v</span><br></pre></td></tr></table></figure>
-<p>如果出现版本号则说明cnpm安装成功。<br>然后用cnpm来安装hexo，命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<p>这样hexo博客就安装完成，输入如下命令验证：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-<p>若出现版本好则hexo博客安装成功。</p>
+<p>先下载<a href="https://nodejs.org/en/">node.js</a>，点击可进入下载网址。官网界面如下：<br><img src= "/img/loading.gif" data-lazy-src="/2020/09/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/nodejs.jpeg" alt><br>点击如图所示的永久版本：<br><img src= "/img/loading.gif" data-lazy-src="/2020/09/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/nodejs2.jpeg" alt><br>下载完成后对其进行安装。<br>安装好后打开终端，输入如下命令进入root目录：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure><br>输入如下命令测试nodejs有没有安装成功：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure><br>如果显示了版本好则说明nodejs安装成功。<br>本来是借助npm包管理器来安装，但是国内镜像速度比较慢，先输入如下命令安装淘宝镜像：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure><br>输入如下命令验证cnpm是否安装成功：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm -v</span><br></pre></td></tr></table></figure><br>如果出现版本号则说明cnpm安装成功。<br>然后用cnpm来安装hexo，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure><br>这样hexo博客就安装完成，输入如下命令验证：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure><br>若出现版本好则hexo博客安装成功。</p>
 <h3 id="搭建Hexo博客"><a href="#搭建Hexo博客" class="headerlink" title="搭建Hexo博客"></a>搭建Hexo博客</h3><hr>
-<p>在root目录下建立blog文件夹（名字可自取）命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir blog</span><br></pre></td></tr></table></figure>
-<p>进入blog：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd blog&#x2F;</span><br></pre></td></tr></table></figure>
-<p>在blog文件夹下初始化hexo，命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo hexo init</span><br></pre></td></tr></table></figure>
-<p>初始化完成，主要生成一些框架的内容。<br>启动hexo博客，命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>输入命令后电脑会默认在4000端口生成hexo博客，可用浏览器输入localhost:4000来从本地访问hexo博客。至此博客已经搭建完成。</p>
+<p>在root目录下建立blog文件夹（名字可自取）命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir blog</span><br></pre></td></tr></table></figure><br>进入blog：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd blog&#x2F;</span><br></pre></td></tr></table></figure><br>在blog文件夹下初始化hexo，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo hexo init</span><br></pre></td></tr></table></figure><br>初始化完成，主要生成一些框架的内容。<br>启动hexo博客，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><br>输入命令后电脑会默认在4000端口生成hexo博客，可用浏览器输入localhost:4000来从本地访问hexo博客。至此博客已经搭建完成。</p>
 <h3 id="更新hexo博客"><a href="#更新hexo博客" class="headerlink" title="更新hexo博客"></a>更新hexo博客</h3><hr>
-<p>当新建文档或者换了新的配置后需要刷新hexo，命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-<p>此命令为清除缓存文件 (db.json) 和已生成的静态文件 (public)。<br>接下来生成静态文件，命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<p>然后再重新启动hexo，命令如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>这样就重新在本地更新了hexo博啦。</p>
+<p>当新建文档或者换了新的配置后需要刷新hexo，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure><br>此命令为清除缓存文件 (db.json) 和已生成的静态文件 (public)。<br>接下来生成静态文件，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure><br>然后再重新启动hexo，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><br>这样就重新在本地更新了hexo博啦。</p>
 <h3 id="上传到GitHub"><a href="#上传到GitHub" class="headerlink" title="上传到GitHub"></a>上传到GitHub</h3><hr>
-<p>先到GitHub上新建一个项目，项目名字为(github用户名).github.io<br>使用如下命令可以将博客部署到GitHub上：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>哈哈，就是这么简单，在浏览器中输入刚刚新建的GitHub项目的网址就能显示你的个人博客啦。（前提是GitHub安装并成功配置）</p>
+<p>先到GitHub上新建一个项目，项目名字为(github用户名).github.io<br>使用如下命令可以将博客部署到GitHub上：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure><br>哈哈，就是这么简单，在浏览器中输入刚刚新建的GitHub项目的网址就能显示你的个人博客啦。（前提是GitHub安装并成功配置）</p>
 <h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><hr>
 <p>关于hexo的使用可进入<a href="https://hexo.io/zh-cn/docs/">hexo使用文档</a>，里面详细记载了hexo的配置和操作命令，这样就能够更改博客的头像和名称等等啦。还有有关给hexo配置主题的问题，我将会在下个博客中详细介绍。</p>
 ]]></content>
@@ -53,6 +25,119 @@
         <tag>博客</tag>
         <tag>Hexo</tag>
         <tag>安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>神经网络基础1</title>
+    <url>/2020/10/15/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%801/</url>
+    <content><![CDATA[<h1 id="神经网络基础1"><a href="#神经网络基础1" class="headerlink" title="神经网络基础1"></a>神经网络基础1</h1><h3 id="关于iPython笔记本"><a href="#关于iPython笔记本" class="headerlink" title="关于iPython笔记本"></a>关于iPython笔记本</h3><hr>
+<p>iPython Notebook（是jupyter notebook的前称）是嵌入在网页中的交互式编码环境。运行iPython笔记本的方法为在终端（Mac版）输入命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure><br>Jupyter notebook的默认端口号为8888，因此在浏览器中输入localhost:8888就能访问。</p>
+<h3 id="使用numpy构建基本函数"><a href="#使用numpy构建基本函数" class="headerlink" title="使用numpy构建基本函数"></a>使用numpy构建基本函数</h3><hr>
+<h4 id="sigmoid-function和np-exp（）"><a href="#sigmoid-function和np-exp（）" class="headerlink" title="sigmoid function和np.exp（）"></a>sigmoid function和np.exp（）</h4><p>sigmoid函数是激活函数的一种，其表达式为：$sigmoid(x) = \frac{1}{1+e^{-x}}$在这里主要对比了np.exp()和math.exp()之间的差别，其目的是为了说明math.exp()主要对单个的数值进行运算，而np.exp()则是对矩阵进行相关的运算。</p>
+<h4 id="Sigmoid-gradient"><a href="#Sigmoid-gradient" class="headerlink" title="Sigmoid gradient"></a>Sigmoid gradient</h4><p>sigmoid函数梯度计算公式为：<script type="math/tex">sigmoid\_derivative(x) = \sigma'(x) = \sigma(x) (1 - \sigma(x))</script>，求梯度的目的主要是要知道曲线在某个方向倾斜程度。在这里将s设为sigmoid(x)，然后再计算$\sigma’(x) = s(1-s)$即可。实现代码如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid_derivative</span>(<span class="params">x</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	功能：求在sigmoid函数中x的梯度</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	x -- 一个标量或者numpy数组</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	ds -- 计算出的梯度</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	s = sigmoid(x) </span><br><span class="line">	ds = s * (<span class="number">1</span> - s)</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> ds</span><br></pre></td></tr></table></figure></p>
+<h4 id="重塑数组"><a href="#重塑数组" class="headerlink" title="重塑数组"></a>重塑数组</h4><p>np.reshape()用于将X重塑为其他尺寸。在计算机科学中，图像由shape为$(length, height, depth = 3)$的3D数组表示。但是，当你读取图像作为算法的输入时，会将其转换为维度为$(length<em>height</em>3, 1)$的向量。换句话说，将3D阵列“展开”或重塑为1D向量。</p>
+<p><strong>练习</strong>：实现<code>image2vector()</code> ,该输入采用维度为(length, height, 3)的输入，并返回维度为(length*height*3, 1)的向量。例如，如果你想将形为（a，b，c）的数组v重塑为维度为(a*b, 3)的向量，则可以执行以下操作：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">v = v.reshape((v.shape[<span class="number">0</span>]*v.shape[<span class="number">1</span>], v.shape[<span class="number">2</span>])) <span class="comment"># v.shape[0] = a ; v.shape[1] = b ; v.shape[2] = c</span></span><br></pre></td></tr></table></figure><br>实现函数如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">image2vector</span>(<span class="params">image</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	iamge -- 一个(length, height, depth)类型的numpy数组</span></span><br><span class="line"><span class="string">	</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	v -- 一个(length*height*depth, 1)类型的向量</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	v = image.reshape(image.shape[<span class="number">0</span>] * image.shape[<span class="number">1</span>] * image.shape[<span class="number">2</span>], <span class="number">1</span>)</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> v</span><br></pre></td></tr></table></figure></p>
+<h4 id="行标准化"><a href="#行标准化" class="headerlink" title="行标准化"></a>行标准化</h4><p>我们在机器学习和深度学习中使用的另一种常见技术是对数据进行标准化。 由于归一化后梯度下降的收敛速度更快，通常会表现出更好的效果。 通过归一化，也就是将x更改为$ \frac{x}{| x|} $（将x的每个行向量除以其范数）。</p>
+<p>以上为作业上内容，但个人还是无法理解归一化后为什么梯度下降的收敛更快。但有一点敢肯定的就是归一化后可以避免计算机计算结果得到大数而导致计算错误，比如算$e^{1000}$后计算机的结果为:<br><img src= "/img/loading.gif" data-lazy-src="/2020/10/15/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%801/e_1000.jpg"><br>从结果中可以看到计算机报错，如果将1000换成是分数，结果就能求出，这是由计算机本身的性能决定的。</p>
+<p>求范数时得用到<a href="https://blog.csdn.net/hqh131360239/article/details/79061535">np.linalg.norm</a>函数。用法在链接中有详细介绍。</p>
+<p><strong>练习</strong>：执行 normalizeRows（）来标准化矩阵的行。 将此函数应用于输入矩阵x之后，x的每一行应为单位长度（即长度为1）向量。<br>函数实现如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalizeRows</span>(<span class="params">x</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	功能：标准化举证的行</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	x -- 一个(n, m)类型的numpy矩阵</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	x -- 标准化后的numpy矩阵</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	x_norm = np.linalg.norm(x, axis = <span class="number">1</span>, keepdims = <span class="literal">True</span>) <span class="comment">#求每行的范数</span></span><br><span class="line">	x = x / x_norm <span class="comment">#更新x矩阵</span></span><br><span class="line">	<span class="keyword">return</span> x</span><br></pre></td></tr></table></figure></p>
+<h4 id="广播和softmax函数"><a href="#广播和softmax函数" class="headerlink" title="广播和softmax函数"></a>广播和softmax函数</h4><p>在numpy中广播是十分重要的，实现了矩阵和数值之间和矩阵和矩阵之间的快速运算，详情见<a href="https://www.runoob.com/numpy/numpy-broadcast.html">numpy广播</a>。</p>
+<p><strong>练习</strong>: 使用numpy实现softmax函数。 你可以将softmax理解为算法需要对两个或多个类进行分类时使用的标准化函数。<br><strong>Instructions</strong>:</p>
+<ul>
+<li><p>$ \text{for } x \in \mathbb{R}^{1\times n} \text{,     } softmax(x) = softmax(\begin{bmatrix}<br>  x_1  &amp;&amp;<br>  x_2 &amp;&amp;<br>  …  &amp;&amp;<br>  x_n<br>\end{bmatrix}) = \begin{bmatrix}<br>   \frac{e^{x_1}}{\sum_{j}e^{x_j}}  &amp;&amp;<br>  \frac{e^{x_2}}{\sum_{j}e^{x_j}}  &amp;&amp;<br>  …  &amp;&amp;<br>  \frac{e^{x_n}}{\sum_{j}e^{x_j}}<br>\end{bmatrix} $ </p>
+</li>
+<li><p>$\text{for a matrix } x \in \mathbb{R}^{m \times n} \text{,  $x_{ij}$ maps to the element in the $i^{th}$ row and $j^{th}$ column of $x$, thus we have: }$  <script type="math/tex">softmax(x) = softmax\begin{bmatrix}
+  x_{11} & x_{12} & x_{13} & \dots  & x_{1n} \\
+  x_{21} & x_{22} & x_{23} & \dots  & x_{2n} \\
+  \vdots & \vdots & \vdots & \ddots & \vdots \\
+  x_{m1} & x_{m2} & x_{m3} & \dots  & x_{mn}
+\end{bmatrix} = \begin{bmatrix}
+  \frac{e^{x_{11}}}{\sum_{j}e^{x_{1j}}} & \frac{e^{x_{12}}}{\sum_{j}e^{x_{1j}}} & \frac{e^{x_{13}}}{\sum_{j}e^{x_{1j}}} & \dots  & \frac{e^{x_{1n}}}{\sum_{j}e^{x_{1j}}} \\
+  \frac{e^{x_{21}}}{\sum_{j}e^{x_{2j}}} & \frac{e^{x_{22}}}{\sum_{j}e^{x_{2j}}} & \frac{e^{x_{23}}}{\sum_{j}e^{x_{2j}}} & \dots  & \frac{e^{x_{2n}}}{\sum_{j}e^{x_{2j}}} \\
+  \vdots & \vdots & \vdots & \ddots & \vdots \\
+  \frac{e^{x_{m1}}}{\sum_{j}e^{x_{mj}}} & \frac{e^{x_{m2}}}{\sum_{j}e^{x_{mj}}} & \frac{e^{x_{m3}}}{\sum_{j}e^{x_{mj}}} & \dots  & \frac{e^{x_{mn}}}{\sum_{j}e^{x_{mj}}}
+\end{bmatrix} = \begin{pmatrix}
+  softmax\text{(first row of x)}  \\
+  softmax\text{(second row of x)} \\
+  ...  \\
+  softmax\text{(last row of x)} \\
+\end{pmatrix}</script></p>
+</li>
+</ul>
+<p>softmax实现如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">softmax</span>(<span class="params">x</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	x -- 一个形状为(n, m)的numpy矩阵</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	s -- 一个形状为(n, m)的值为softmax(x)的numpy矩阵</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	x_exp = np.exp(x)</span><br><span class="line">	x_sum = np.sum(x_exp, axis = <span class="number">1</span>, keepdims = <span class="literal">True</span>) <span class="comment">#对每行exp后的值求和</span></span><br><span class="line">	s = x_exp / x_sum</span><br><span class="line">	<span class="keyword">return</span> s</span><br></pre></td></tr></table></figure><br>之前用pytorch写过手写数字识别的小程序，对于softmax函数映像很深。因为手写数字识别程序主要是通过训练来提高识别到真实数据的概率的方式来输出识别到的数字的。我目前认为softmax主要是将数值归一化来描述概率。</p>
+<h3 id="向量化"><a href="#向量化" class="headerlink" title="向量化"></a>向量化</h3><p>这里介绍了几个实验，目的就是为了说明用矩阵运算处理数据要比单个数值处理的运算速度更加快，这是由计算机的性能决定的，具体是为什么还待日后研究。</p>
+<h4 id="实现L1和L2损失函数"><a href="#实现L1和L2损失函数" class="headerlink" title="实现L1和L2损失函数"></a>实现L1和L2损失函数</h4><p>通俗来讲损失函数主要的功能其实就是求神经网络训练的值和真实值之间的差距，训练神经网络的目的其实就是缩小这个差距来使训练出来的值尽可能接近真实值。<br>L1损失函数公式：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<script type="math/tex">\begin{align*} & L_1(\hat{y}, y) = \sum_{i=0}^m|y^{(i)} - \hat{y}^{(i)}| \end{align*}</script><br>代码实现如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">L2</span>(<span class="params">yhat, y</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	yhat -- 预测值</span></span><br><span class="line"><span class="string">	y -- 真实值</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	loss -- 损失函数求得的损失值</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	loss = np.sum(np.abs(y - yhat))</span><br><span class="line">	<span class="keyword">return</span> loss</span><br></pre></td></tr></table></figure><br>L2损失函数公式：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<script type="math/tex">\begin{align*} & L_2(\hat{y},y) = \sum_{i=0}^m(y^{(i)} - \hat{y}^{(i)})^2 \end{align*}</script><br>代码实现如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">L2</span>(<span class="params">yhat, y</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	yhat -- 预测值</span></span><br><span class="line"><span class="string">	y -- 真实值</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	loss -- 损失函数求得的损失值</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	loss = np.dot((y - yhat),(y - yhat).T)</span><br><span class="line">	<span class="keyword">return</span> loss</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <categories>
+        <category>人工智能</category>
+        <category>吴恩达视频学习</category>
+        <category>Lesson1</category>
+      </categories>
+      <tags>
+        <tag>人工智能</tag>
+        <tag>深度学习</tag>
+        <tag>神经网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>结构化机器学习</title>
+    <url>/2020/10/15/%E7%BB%93%E6%9E%84%E5%8C%96%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h2 id="机器学习策略"><a href="#机器学习策略" class="headerlink" title="机器学习策略"></a>机器学习策略</h2><p>机器学习策略：在优化深度学习系统时，通过一些分析机器学习问题的方法来制定一些策略，在优化过程中能够朝着有希望的过程中标前进。</p>
+<h4 id="正交化"><a href="#正交化" class="headerlink" title="正交化"></a>正交化</h4><hr>
+<p>正交化：如果两个方向成90<sup>o</sup>夹角，那么这两个方向正交。正交化其实就是把要解决的问题分成不同并互不影响的维度来解决。</p>
+<p>举例：如果要调节一个视屏屏幕的大小，如果有一个按钮能同时调节屏幕的长和宽。那么这样在调节长的时候宽在变，在调节宽的时候长在变，这样就很难把屏幕调到目标大小。如果我们把一个按钮分成长和宽两个调节按钮，因为这两个按钮分别调节不同的维度，在调节长的时候宽不变，在调节宽的时候长不变，这样可以说这两个按钮是正交化了的，那么这样你就能够更准确地调节长和宽了。<img src= "/img/loading.gif" data-lazy-src="/2020/10/15/%E7%BB%93%E6%9E%84%E5%8C%96%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Orthogonalization.jpeg" alt></p>
+<h4 id="单一数字评估指标"><a href="#单一数字评估指标" class="headerlink" title="单一数字评估指标"></a>单一数字评估指标</h4><hr>
+<p>个人理解：用一个数值化的标准来评估训练结果。</p>
+<p>查准率(P)：在你的分类器标记为猫的例子中，有多少真的是猫。（假设有120张图片，分类器A说有100张图片是猫，事实真的是猫的只有95张图片，那么分类器A的查准率为95%）</p>
+<p>查全率(R)：对于所有真猫的图片，你的分类器正确识别出了多少百分比。（假设有100张图片全是真的猫，然后分类器A却说只有90张是真的猫，那么分类器A的查全率为90%）</p>
+<p>F1分数：$ \frac{2}{\frac{1}{P}+\frac{1}{R}} $<br>在数学中，这个函数叫做查准率和查全率的调和平均数。但非正式来说，你可以将它看成是某种查准率和查全率的平均值，只不过你算的不是直接的算术平均，而是用这个公式定义的调和平均。</p>
+<h4 id="满足和优化指标"><a href="#满足和优化指标" class="headerlink" title="满足和优化指标"></a>满足和优化指标</h4><hr>
+<p>满足指标：只要满足在阀值内就行的指标。（例如跑步比赛不能超过起跑线，那么距离起跑线多远都在规则内）</p>
+<p>优化指标：指越优化性能越好的指标。（例如百米赛跑中当然是速度越快越好，那么跑步的速度就是优化指标）</p>
+<h4 id="训练-开发-测试集划分"><a href="#训练-开发-测试集划分" class="headerlink" title="训练/开发/测试集划分"></a>训练/开发/测试集划分</h4><hr>
+<p>三类数据集定义：</p>
+<ul>
+<li>training set：顾名思义，是用来训练模型的。因此它占了所有数据的绝大部分。</li>
+<li>development set：用来对训练集训练出来的模型进行测试，通过测试结果来不断地优化模型。</li>
+<li>test set：在训练结束后对训练出的模型进行一次最终的评估所用的数据集。</li>
+</ul>
+<p>在选择开发和训练集时最好能够对数据集均匀化，例如有A, B, C, D这来自四种不同地区的数据，如果开发集选择A, B测试集选择C, D的话，那么可能训练的系统不能够满足测试集的需求，所以最好把A, B, C, D这四类数据混合到一起再分配到开发集和测试集当中去。</p>
+<h4 id="开发集和测试集的大小"><a href="#开发集和测试集的大小" class="headerlink" title="开发集和测试集的大小"></a>开发集和测试集的大小</h4><hr>
+<p>大部分数据都集中在训练集上，除非你需要对最终投产系统有一个很精确的指标，所以开发集和测试集往往不需要很大。</p>
+<h4 id="什么时候该改变开发-测试集和指标？"><a href="#什么时候该改变开发-测试集和指标？" class="headerlink" title="什么时候该改变开发/测试集和指标？"></a>什么时候该改变开发/测试集和指标？</h4><hr>
+<p>分类错误率指标：$ Error = \frac{1}{m_{dev}}\sum_{i=1}^{m_{dev}}I\left \{ y_{pred}^{\left ( i \right )} \neq y^{\left ( i \right )}\right \} $<br>这个式子表示预测值与正确值不相等的个数占例子总数的比例。</p>
+<p>加权重后指标：$ Error = \frac{1}{m_{dev}}\sum_{i=1}^{m_{dev}}w^{\left ( i \right )}I\left \{ y_{pred}^{\left ( i \right )} \neq y^{\left ( i \right )}\right \} $<br>在预测值不等于实际值时的前提下，预测值是特别不满意的数值，就在此预测结果上加上权重来表示自己想要的错误率。</p>
+<p>归一化常数错误指标：$ Error = \frac{1}{\sum w^{\left ( i \right )}}\sum_{i=1}^{m_{dev}}w^{\left ( i \right )}I\left \{ y_{pred}^{\left ( i \right )} \neq y^{\left ( i \right )}\right \} $<br>此式子能够让所有错误率相加等于一，就是所谓的归一化。</p>
+<h4 id="为什么是人的表现？"><a href="#为什么是人的表现？" class="headerlink" title="为什么是人的表现？"></a>为什么是人的表现？</h4><hr>
+<p>算法发展过快已经能和人进行比较了。</p>
+<h4 id="可避免偏差"><a href="#可避免偏差" class="headerlink" title="可避免偏差"></a>可避免偏差</h4><hr>
+<p>贝叶斯错误率：指理论上错误率的上限。<br>可避免偏差：贝叶斯错误率或者对贝叶斯错误率的估计和训练错误率之间的差值。</p>
+<p>当可避免偏差过大时说明可以优化的空间比较大，说明还可以继续做调整。</p>
+<h4 id="理解人的表现"><a href="#理解人的表现" class="headerlink" title="理解人的表现"></a>理解人的表现</h4><hr>
+<p>贝叶斯错误率一定是最优错误率，不管多少团队还是个人都无法比这个错误率更优。有时候可以用人的错误率来近似代替贝叶斯错误率来计算可避免偏差。</p>
+<h4 id="超过人的表现"><a href="#超过人的表现" class="headerlink" title="超过人的表现"></a>超过人的表现</h4><hr>
+<p>当计算机训练到接近人类水平或者超越人类水平的时候，以后的学习速度会越来越慢。</p>
+<h4 id="改善你的模型的表现"><a href="#改善你的模型的表现" class="headerlink" title="改善你的模型的表现"></a>改善你的模型的表现</h4><hr>
+<h4 id="进行错误分析"><a href="#进行错误分析" class="headerlink" title="进行错误分析"></a>进行错误分析</h4><hr>
+<p>通过人工的观察错误样本并从错误样本并人工统计错误样本中导致错误的最大可能的原因然后系统的分析错误样本来对制定之后的优化策略。</p>
+<h4 id="清除标注错误的数据"><a href="#清除标注错误的数据" class="headerlink" title="清除标注错误的数据"></a>清除标注错误的数据</h4><hr>
+<p>标注错误：在数据集中经常会遇到图片与对应的标注不匹配的错误。<br>随机错误：如果标注的人员没注意不小心把标注错了，只要产生错误足够随机。<br>系统错误：比如标记本来猫对应着是1，但是标记人员认为狗对应着是1，然后一直给狗标记为1，这就是系统错误。</p>
+<p>深度学习算法对随机误差很健壮，但对系统性的错误就没那么健壮了。如果是随机错误，数据集过大，实际的错误率就不会太高。但如果是系统错误，对结果的影响就很大了。最后通过分析标注错误所占错误率的比例来判断是否有必要修改标记错误。<img src= "/img/loading.gif" data-lazy-src="/2020/10/15/%E7%BB%93%E6%9E%84%E5%8C%96%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/mark.png" alt></p>
+<h4 id="快速搭建你的第一个系统，并进行迭代"><a href="#快速搭建你的第一个系统，并进行迭代" class="headerlink" title="快速搭建你的第一个系统，并进行迭代"></a>快速搭建你的第一个系统，并进行迭代</h4><hr>
+<p>先不要想太多，快速搭建系统然后再慢慢优化。初始系统的全部意义在于，有一个学习过的系统，有一个训练过的系统，让你确定偏差方差的范围，就可以知道下一步应该优先做什么，让你能够进行错误分析，可以观察一些错误，然后想出所有能走的方向，哪些是实际上最有希望的方向。</p>
+<h4 id="使用来自不同分布的数据，进行训练和测试"><a href="#使用来自不同分布的数据，进行训练和测试" class="headerlink" title="使用来自不同分布的数据，进行训练和测试"></a>使用来自不同分布的数据，进行训练和测试</h4><hr>
+<p>当有一大部分是理想的数据集，还有一小部分是普通的数据集的时候，不应该把这两种数据集混合在一起均匀分配到每个集合中。应该将普通的数据当做把心才能更好的满足用户的需求。<img src= "/img/loading.gif" data-lazy-src="/2020/10/15/%E7%BB%93%E6%9E%84%E5%8C%96%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/distributing.png" alt></p>
+<h4 id="不匹配数据划分的偏差与方差"><a href="#不匹配数据划分的偏差与方差" class="headerlink" title="不匹配数据划分的偏差与方差"></a>不匹配数据划分的偏差与方差</h4><hr>
+<p>先加了个train_dev的错误率，这部分的数据集是来自训练的数据集，如果train_dev的错误率与train的错误率差值过大，则说明是算法的问题，如果train_dev的错误率与dev的错误率差值过大说明是数据集的问题。<img src= "/img/loading.gif" data-lazy-src="/2020/10/15/%E7%BB%93%E6%9E%84%E5%8C%96%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/train_dev.png" alt></p>
+<h4 id="定位数据不匹配"><a href="#定位数据不匹配" class="headerlink" title="定位数据不匹配"></a>定位数据不匹配</h4><hr>
+<h4 id="迁移学习"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习</h4><hr>
+<h4 id="多任务学习"><a href="#多任务学习" class="headerlink" title="多任务学习"></a>多任务学习</h4><hr>
+<h4 id="什么是端对端的学习"><a href="#什么是端对端的学习" class="headerlink" title="什么是端对端的学习"></a>什么是端对端的学习</h4><hr>
+<h4 id="是否要使用端对端的深度学习"><a href="#是否要使用端对端的深度学习" class="headerlink" title="是否要使用端对端的深度学习"></a>是否要使用端对端的深度学习</h4><hr>
+]]></content>
+      <tags>
+        <tag>吴恩达视屏学习</tag>
+        <tag>结构化机器学习</tag>
       </tags>
   </entry>
 </search>
