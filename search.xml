@@ -1,55 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo博客的安装教程</title>
-    <url>/2020/09/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><hr>
-<p>&emsp;&emsp;博客：正式名称为网络日记，是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。<br>&emsp;&emsp;由于最近看了比较多的书和学习视屏后发现很多知识容易遗忘，并且很多技术上的难点当时想通了但是之后就很容易忘记。于是想着建个个人的博客站点来记录平时学到的知识和解决的难题并且也有助于技术的分享。<br>&emsp;&emsp;本教程主要讲述Hexo博客的安装，使用的操作系统为macOS，其他系统也是大同小异。此教程中的博客是部署到GitHub中，请先安装并且配置好GitHub。</p>
-<h3 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h3><hr>
-<p>先下载<a href="https://nodejs.org/en/">node.js</a>，点击可进入下载网址。官网界面如下：<br><img src= "/img/loading.gif" data-lazy-src="/2020/09/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/nodejs.jpeg" alt><br>点击如图所示的永久版本：<br><img src= "/img/loading.gif" data-lazy-src="/2020/09/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/nodejs2.jpeg" alt><br>下载完成后对其进行安装。<br>安装好后打开终端，输入如下命令进入root目录：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure><br>输入如下命令测试nodejs有没有安装成功：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure><br>如果显示了版本好则说明nodejs安装成功。<br>本来是借助npm包管理器来安装，但是国内镜像速度比较慢，先输入如下命令安装淘宝镜像：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure><br>输入如下命令验证cnpm是否安装成功：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm -v</span><br></pre></td></tr></table></figure><br>如果出现版本号则说明cnpm安装成功。<br>然后用cnpm来安装hexo，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure><br>这样hexo博客就安装完成，输入如下命令验证：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure><br>若出现版本好则hexo博客安装成功。</p>
-<h3 id="搭建Hexo博客"><a href="#搭建Hexo博客" class="headerlink" title="搭建Hexo博客"></a>搭建Hexo博客</h3><hr>
-<p>在root目录下建立blog文件夹（名字可自取）命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir blog</span><br></pre></td></tr></table></figure><br>进入blog：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd blog&#x2F;</span><br></pre></td></tr></table></figure><br>在blog文件夹下初始化hexo，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo hexo init</span><br></pre></td></tr></table></figure><br>初始化完成，主要生成一些框架的内容。<br>启动hexo博客，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><br>输入命令后电脑会默认在4000端口生成hexo博客，可用浏览器输入localhost:4000来从本地访问hexo博客。至此博客已经搭建完成。</p>
-<h3 id="更新hexo博客"><a href="#更新hexo博客" class="headerlink" title="更新hexo博客"></a>更新hexo博客</h3><hr>
-<p>当新建文档或者换了新的配置后需要刷新hexo，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure><br>此命令为清除缓存文件 (db.json) 和已生成的静态文件 (public)。<br>接下来生成静态文件，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure><br>然后再重新启动hexo，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><br>这样就重新在本地更新了hexo博啦。</p>
-<h3 id="上传到GitHub"><a href="#上传到GitHub" class="headerlink" title="上传到GitHub"></a>上传到GitHub</h3><hr>
-<p>先到GitHub上新建一个项目，项目名字为(github用户名).github.io<br>使用如下命令可以将博客部署到GitHub上：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure><br>哈哈，就是这么简单，在浏览器中输入刚刚新建的GitHub项目的网址就能显示你的个人博客啦。（前提是GitHub安装并成功配置）</p>
-<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><hr>
-<p>关于hexo的使用可进入<a href="https://hexo.io/zh-cn/docs/">hexo使用文档</a>，里面详细记载了hexo的配置和操作命令，这样就能够更改博客的头像和名称等等啦。还有有关给hexo配置主题的问题，我将会在下个博客中详细介绍。</p>
-]]></content>
-      <categories>
-        <category>开发基本技能</category>
-        <category>博客</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-        <tag>Hexo</tag>
-        <tag>安装</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于深度学习的激光束识别（绪论）</title>
-    <url>/2021/02/25/%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%BF%80%E5%85%89%E6%9D%9F%E8%AF%86%E5%88%AB%EF%BC%88%E7%BB%AA%E8%AE%BA%EF%BC%89/</url>
-    <content><![CDATA[<h2 id="基于深度学习的激光束识别（绪论）"><a href="#基于深度学习的激光束识别（绪论）" class="headerlink" title="基于深度学习的激光束识别（绪论）"></a>基于深度学习的激光束识别（绪论）</h2><h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>这其实是导师安排的一个小项目。为了解决煤矿箕斗倒煤倒不完全无法实时报警的问题，通过实时识别激光束的长短来判断箕斗有没有把煤倒完全。老师们在现场采集了场地的视频，然后通过对视频里的图片用神经网络进行训练从而得出网络参数，最后就能通过实时获取的图片预测出激光束具体的长度和位置。在这里只是讲述了能够把激光束识别出来并与视屏进行合成的大概的效果的实现，因为优化是个繁琐，复杂和漫长的过程，在这里也不一一赘述。在这个项目中我们使用了OpenCV来进行前期和后期的视屏图像处理，同时也使用pytorch框架来进行网络的搭建、训练和预测。</p>
-<h4 id="实现的内容"><a href="#实现的内容" class="headerlink" title="实现的内容"></a>实现的内容</h4><ol>
-<li><a href="基于深度学习的激光束识别（绪论）.md">基于深度学习的激光束识别(绪论)</a></li>
-<li><a href="基于深度学习的激光束识别（数据）.md">基于深度学习的激光束识别(数据)</a></li>
-<li><a href="基于深度学习的激光束识别（训练）.md">基于深度学习的激光束识别(数据)</a></li>
-<li><a href="基于深度学习的激光束识别（预测）.md">基于深度学习的激光束识别(数据)</a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>人工智能</category>
-        <category>激光束识别</category>
-      </categories>
-      <tags>
-        <tag>人工智能</tag>
-        <tag>深度学习</tag>
-        <tag>神经网络</tag>
-        <tag>激光束识别</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基于深度学习的激光束识别（数据）</title>
     <url>/2021/02/25/%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%BF%80%E5%85%89%E6%9D%9F%E8%AF%86%E5%88%AB%EF%BC%88%E6%95%B0%E6%8D%AE%EF%BC%89/</url>
     <content><![CDATA[<h2 id="基于深度学习的激光束识别（数据）"><a href="#基于深度学习的激光束识别（数据）" class="headerlink" title="基于深度学习的激光束识别（数据）"></a>基于深度学习的激光束识别（数据）</h2><h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>在深度学习的项目中，可以说数据是十分重要的。因为如果数据有错误或者数据不合适的话，那后面所设计的网络和所调节的参数可能都要重新更改过，这样就会严重影响项目完成的效率。在这里数据主要分为两部分：一是数据准备，二是在pytorch中进行数据加载。</p>
@@ -105,55 +56,25 @@
       </tags>
   </entry>
   <entry>
-    <title>神经网络基础1</title>
-    <url>/2020/10/15/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%801/</url>
-    <content><![CDATA[<h1 id="神经网络基础1"><a href="#神经网络基础1" class="headerlink" title="神经网络基础1"></a>神经网络基础1</h1><h3 id="关于iPython笔记本"><a href="#关于iPython笔记本" class="headerlink" title="关于iPython笔记本"></a>关于iPython笔记本</h3><hr>
-<p>iPython Notebook（是jupyter notebook的前称）是嵌入在网页中的交互式编码环境。运行iPython笔记本的方法为在终端（Mac版）输入命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure><br>Jupyter notebook的默认端口号为8888，因此在浏览器中输入localhost:8888就能访问。</p>
-<h3 id="使用numpy构建基本函数"><a href="#使用numpy构建基本函数" class="headerlink" title="使用numpy构建基本函数"></a>使用numpy构建基本函数</h3><hr>
-<h4 id="sigmoid-function和np-exp（）"><a href="#sigmoid-function和np-exp（）" class="headerlink" title="sigmoid function和np.exp（）"></a>sigmoid function和np.exp（）</h4><p>sigmoid函数是激活函数的一种，其表达式为：$sigmoid(x) = \frac{1}{1+e^{-x}}$在这里主要对比了np.exp()和math.exp()之间的差别，其目的是为了说明math.exp()主要对单个的数值进行运算，而np.exp()则是对矩阵进行相关的运算。</p>
-<h4 id="Sigmoid-gradient"><a href="#Sigmoid-gradient" class="headerlink" title="Sigmoid gradient"></a>Sigmoid gradient</h4><p>sigmoid函数梯度计算公式为：<script type="math/tex">sigmoid\_derivative(x) = \sigma'(x) = \sigma(x) (1 - \sigma(x))</script>，求梯度的目的主要是要知道曲线在某个方向倾斜程度。在这里将s设为sigmoid(x)，然后再计算$\sigma’(x) = s(1-s)$即可。实现代码如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid_derivative</span>(<span class="params">x</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	功能：求在sigmoid函数中x的梯度</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	x -- 一个标量或者numpy数组</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	ds -- 计算出的梯度</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	s = sigmoid(x) </span><br><span class="line">	ds = s * (<span class="number">1</span> - s)</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> ds</span><br></pre></td></tr></table></figure></p>
-<h4 id="重塑数组"><a href="#重塑数组" class="headerlink" title="重塑数组"></a>重塑数组</h4><p>np.reshape()用于将X重塑为其他尺寸。在计算机科学中，图像由shape为$(length, height, depth = 3)$的3D数组表示。但是，当你读取图像作为算法的输入时，会将其转换为维度为$(length<em>height</em>3, 1)$的向量。换句话说，将3D阵列“展开”或重塑为1D向量。</p>
-<p><strong>练习</strong>：实现<code>image2vector()</code> ,该输入采用维度为(length, height, 3)的输入，并返回维度为(length*height*3, 1)的向量。例如，如果你想将形为（a，b，c）的数组v重塑为维度为(a*b, 3)的向量，则可以执行以下操作：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">v = v.reshape((v.shape[<span class="number">0</span>]*v.shape[<span class="number">1</span>], v.shape[<span class="number">2</span>])) <span class="comment"># v.shape[0] = a ; v.shape[1] = b ; v.shape[2] = c</span></span><br></pre></td></tr></table></figure><br>实现函数如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">image2vector</span>(<span class="params">image</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	iamge -- 一个(length, height, depth)类型的numpy数组</span></span><br><span class="line"><span class="string">	</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	v -- 一个(length*height*depth, 1)类型的向量</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	v = image.reshape(image.shape[<span class="number">0</span>] * image.shape[<span class="number">1</span>] * image.shape[<span class="number">2</span>], <span class="number">1</span>)</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> v</span><br></pre></td></tr></table></figure></p>
-<h4 id="行标准化"><a href="#行标准化" class="headerlink" title="行标准化"></a>行标准化</h4><p>我们在机器学习和深度学习中使用的另一种常见技术是对数据进行标准化。 由于归一化后梯度下降的收敛速度更快，通常会表现出更好的效果。 通过归一化，也就是将x更改为$ \frac{x}{| x|} $（将x的每个行向量除以其范数）。</p>
-<p>以上为作业上内容，但个人还是无法理解归一化后为什么梯度下降的收敛更快。但有一点敢肯定的就是归一化后可以避免计算机计算结果得到大数而导致计算错误，比如算$e^{1000}$后计算机的结果为:<br><img src= "/img/loading.gif" data-lazy-src="/2020/10/15/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%801/e_1000.jpg"><br>从结果中可以看到计算机报错，如果将1000换成是分数，结果就能求出，这是由计算机本身的性能决定的。</p>
-<p>求范数时得用到<a href="https://blog.csdn.net/hqh131360239/article/details/79061535">np.linalg.norm</a>函数。用法在链接中有详细介绍。</p>
-<p><strong>练习</strong>：执行 normalizeRows（）来标准化矩阵的行。 将此函数应用于输入矩阵x之后，x的每一行应为单位长度（即长度为1）向量。<br>函数实现如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalizeRows</span>(<span class="params">x</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	功能：标准化举证的行</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	x -- 一个(n, m)类型的numpy矩阵</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	x -- 标准化后的numpy矩阵</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	x_norm = np.linalg.norm(x, axis = <span class="number">1</span>, keepdims = <span class="literal">True</span>) <span class="comment">#求每行的范数</span></span><br><span class="line">	x = x / x_norm <span class="comment">#更新x矩阵</span></span><br><span class="line">	<span class="keyword">return</span> x</span><br></pre></td></tr></table></figure></p>
-<h4 id="广播和softmax函数"><a href="#广播和softmax函数" class="headerlink" title="广播和softmax函数"></a>广播和softmax函数</h4><p>在numpy中广播是十分重要的，实现了矩阵和数值之间和矩阵和矩阵之间的快速运算，详情见<a href="https://www.runoob.com/numpy/numpy-broadcast.html">numpy广播</a>。</p>
-<p><strong>练习</strong>: 使用numpy实现softmax函数。 你可以将softmax理解为算法需要对两个或多个类进行分类时使用的标准化函数。<br><strong>Instructions</strong>:</p>
-<ul>
-<li><p>$ \text{for } x \in \mathbb{R}^{1\times n} \text{,     } softmax(x) = softmax(\begin{bmatrix}<br>  x_1  &amp;&amp;<br>  x_2 &amp;&amp;<br>  …  &amp;&amp;<br>  x_n<br>\end{bmatrix}) = \begin{bmatrix}<br>   \frac{e^{x_1}}{\sum_{j}e^{x_j}}  &amp;&amp;<br>  \frac{e^{x_2}}{\sum_{j}e^{x_j}}  &amp;&amp;<br>  …  &amp;&amp;<br>  \frac{e^{x_n}}{\sum_{j}e^{x_j}}<br>\end{bmatrix} $ </p>
-</li>
-<li><p>$\text{for a matrix } x \in \mathbb{R}^{m \times n} \text{,  $x_{ij}$ maps to the element in the $i^{th}$ row and $j^{th}$ column of $x$, thus we have: }$  <script type="math/tex">softmax(x) = softmax\begin{bmatrix}
-  x_{11} & x_{12} & x_{13} & \dots  & x_{1n} \\
-  x_{21} & x_{22} & x_{23} & \dots  & x_{2n} \\
-  \vdots & \vdots & \vdots & \ddots & \vdots \\
-  x_{m1} & x_{m2} & x_{m3} & \dots  & x_{mn}
-\end{bmatrix} = \begin{bmatrix}
-  \frac{e^{x_{11}}}{\sum_{j}e^{x_{1j}}} & \frac{e^{x_{12}}}{\sum_{j}e^{x_{1j}}} & \frac{e^{x_{13}}}{\sum_{j}e^{x_{1j}}} & \dots  & \frac{e^{x_{1n}}}{\sum_{j}e^{x_{1j}}} \\
-  \frac{e^{x_{21}}}{\sum_{j}e^{x_{2j}}} & \frac{e^{x_{22}}}{\sum_{j}e^{x_{2j}}} & \frac{e^{x_{23}}}{\sum_{j}e^{x_{2j}}} & \dots  & \frac{e^{x_{2n}}}{\sum_{j}e^{x_{2j}}} \\
-  \vdots & \vdots & \vdots & \ddots & \vdots \\
-  \frac{e^{x_{m1}}}{\sum_{j}e^{x_{mj}}} & \frac{e^{x_{m2}}}{\sum_{j}e^{x_{mj}}} & \frac{e^{x_{m3}}}{\sum_{j}e^{x_{mj}}} & \dots  & \frac{e^{x_{mn}}}{\sum_{j}e^{x_{mj}}}
-\end{bmatrix} = \begin{pmatrix}
-  softmax\text{(first row of x)}  \\
-  softmax\text{(second row of x)} \\
-  ...  \\
-  softmax\text{(last row of x)} \\
-\end{pmatrix}</script></p>
-</li>
-</ul>
-<p>softmax实现如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">softmax</span>(<span class="params">x</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	x -- 一个形状为(n, m)的numpy矩阵</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	s -- 一个形状为(n, m)的值为softmax(x)的numpy矩阵</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	x_exp = np.exp(x)</span><br><span class="line">	x_sum = np.sum(x_exp, axis = <span class="number">1</span>, keepdims = <span class="literal">True</span>) <span class="comment">#对每行exp后的值求和</span></span><br><span class="line">	s = x_exp / x_sum</span><br><span class="line">	<span class="keyword">return</span> s</span><br></pre></td></tr></table></figure><br>之前用pytorch写过手写数字识别的小程序，对于softmax函数映像很深。因为手写数字识别程序主要是通过训练来提高识别到真实数据的概率的方式来输出识别到的数字的。我目前认为softmax主要是将数值归一化来描述概率。</p>
-<h3 id="向量化"><a href="#向量化" class="headerlink" title="向量化"></a>向量化</h3><p>这里介绍了几个实验，目的就是为了说明用矩阵运算处理数据要比单个数值处理的运算速度更加快，这是由计算机的性能决定的，具体是为什么还待日后研究。</p>
-<h4 id="实现L1和L2损失函数"><a href="#实现L1和L2损失函数" class="headerlink" title="实现L1和L2损失函数"></a>实现L1和L2损失函数</h4><p>通俗来讲损失函数主要的功能其实就是求神经网络训练的值和真实值之间的差距，训练神经网络的目的其实就是缩小这个差距来使训练出来的值尽可能接近真实值。<br>L1损失函数公式：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<script type="math/tex">\begin{align*} & L_1(\hat{y}, y) = \sum_{i=0}^m|y^{(i)} - \hat{y}^{(i)}| \end{align*}</script><br>代码实现如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">L2</span>(<span class="params">yhat, y</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	yhat -- 预测值</span></span><br><span class="line"><span class="string">	y -- 真实值</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	loss -- 损失函数求得的损失值</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	loss = np.sum(np.abs(y - yhat))</span><br><span class="line">	<span class="keyword">return</span> loss</span><br></pre></td></tr></table></figure><br>L2损失函数公式：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<script type="math/tex">\begin{align*} & L_2(\hat{y},y) = \sum_{i=0}^m(y^{(i)} - \hat{y}^{(i)})^2 \end{align*}</script><br>代码实现如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">L2</span>(<span class="params">yhat, y</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	yhat -- 预测值</span></span><br><span class="line"><span class="string">	y -- 真实值</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	loss -- 损失函数求得的损失值</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	loss = np.dot((y - yhat),(y - yhat).T)</span><br><span class="line">	<span class="keyword">return</span> loss</span><br></pre></td></tr></table></figure></p>
+    <title>基于深度学习的激光束识别（绪论）</title>
+    <url>/2021/02/25/%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%BF%80%E5%85%89%E6%9D%9F%E8%AF%86%E5%88%AB%EF%BC%88%E7%BB%AA%E8%AE%BA%EF%BC%89/</url>
+    <content><![CDATA[<h2 id="基于深度学习的激光束识别（绪论）"><a href="#基于深度学习的激光束识别（绪论）" class="headerlink" title="基于深度学习的激光束识别（绪论）"></a>基于深度学习的激光束识别（绪论）</h2><h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>这其实是导师安排的一个小项目。为了解决煤矿箕斗倒煤倒不完全无法实时报警的问题，通过实时识别激光束的长短来判断箕斗有没有把煤倒完全。老师们在现场采集了场地的视频，然后通过对视频里的图片用神经网络进行训练从而得出网络参数，最后就能通过实时获取的图片预测出激光束具体的长度和位置。在这里只是讲述了能够把激光束识别出来并与视屏进行合成的大概的效果的实现，因为优化是个繁琐，复杂和漫长的过程，在这里也不一一赘述。在这个项目中我们使用了OpenCV来进行前期和后期的视屏图像处理，同时也使用pytorch框架来进行网络的搭建、训练和预测。</p>
+<h4 id="实现的内容"><a href="#实现的内容" class="headerlink" title="实现的内容"></a>实现的内容</h4><ol>
+<li><a href="基于深度学习的激光束识别（绪论）.md">基于深度学习的激光束识别(绪论)</a></li>
+<li><a href="基于深度学习的激光束识别（数据）.md">基于深度学习的激光束识别(数据)</a></li>
+<li><a href="基于深度学习的激光束识别（训练）.md">基于深度学习的激光束识别(数据)</a></li>
+<li><a href="基于深度学习的激光束识别（预测）.md">基于深度学习的激光束识别(数据)</a></li>
+</ol>
 ]]></content>
       <categories>
         <category>人工智能</category>
-        <category>吴恩达视频学习</category>
-        <category>Lesson1</category>
+        <category>激光束识别</category>
       </categories>
       <tags>
         <tag>人工智能</tag>
         <tag>深度学习</tag>
         <tag>神经网络</tag>
+        <tag>激光束识别</tag>
       </tags>
   </entry>
   <entry>
@@ -230,6 +151,85 @@
       <tags>
         <tag>吴恩达视屏学习</tag>
         <tag>结构化机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo博客的安装教程</title>
+    <url>/2020/09/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><hr>
+<p>&emsp;&emsp;博客：正式名称为网络日记，是使用特定的软件，在网络上出版、发表和张贴个人文章的人，或者是一种通常由个人管理、不定期张贴新的文章的网站。<br>&emsp;&emsp;由于最近看了比较多的书和学习视屏后发现很多知识容易遗忘，并且很多技术上的难点当时想通了但是之后就很容易忘记。于是想着建个个人的博客站点来记录平时学到的知识和解决的难题并且也有助于技术的分享。<br>&emsp;&emsp;本教程主要讲述Hexo博客的安装，使用的操作系统为macOS，其他系统也是大同小异。此教程中的博客是部署到GitHub中，请先安装并且配置好GitHub。</p>
+<h3 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h3><hr>
+<p>先下载<a href="https://nodejs.org/en/">node.js</a>，点击可进入下载网址。官网界面如下：<br><img src= "/img/loading.gif" data-lazy-src="/2020/09/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/nodejs.jpeg" alt><br>点击如图所示的永久版本：<br><img src= "/img/loading.gif" data-lazy-src="/2020/09/02/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/nodejs2.jpeg" alt><br>下载完成后对其进行安装。<br>安装好后打开终端，输入如下命令进入root目录：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure><br>输入如下命令测试nodejs有没有安装成功：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure><br>如果显示了版本好则说明nodejs安装成功。<br>本来是借助npm包管理器来安装，但是国内镜像速度比较慢，先输入如下命令安装淘宝镜像：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure><br>输入如下命令验证cnpm是否安装成功：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm -v</span><br></pre></td></tr></table></figure><br>如果出现版本号则说明cnpm安装成功。<br>然后用cnpm来安装hexo，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure><br>这样hexo博客就安装完成，输入如下命令验证：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure><br>若出现版本好则hexo博客安装成功。</p>
+<h3 id="搭建Hexo博客"><a href="#搭建Hexo博客" class="headerlink" title="搭建Hexo博客"></a>搭建Hexo博客</h3><hr>
+<p>在root目录下建立blog文件夹（名字可自取）命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir blog</span><br></pre></td></tr></table></figure><br>进入blog：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd blog&#x2F;</span><br></pre></td></tr></table></figure><br>在blog文件夹下初始化hexo，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo hexo init</span><br></pre></td></tr></table></figure><br>初始化完成，主要生成一些框架的内容。<br>启动hexo博客，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><br>输入命令后电脑会默认在4000端口生成hexo博客，可用浏览器输入localhost:4000来从本地访问hexo博客。至此博客已经搭建完成。</p>
+<h3 id="更新hexo博客"><a href="#更新hexo博客" class="headerlink" title="更新hexo博客"></a>更新hexo博客</h3><hr>
+<p>当新建文档或者换了新的配置后需要刷新hexo，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure><br>此命令为清除缓存文件 (db.json) 和已生成的静态文件 (public)。<br>接下来生成静态文件，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure><br>然后再重新启动hexo，命令如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure><br>这样就重新在本地更新了hexo博啦。</p>
+<h3 id="上传到GitHub"><a href="#上传到GitHub" class="headerlink" title="上传到GitHub"></a>上传到GitHub</h3><hr>
+<p>先到GitHub上新建一个项目，项目名字为(github用户名).github.io<br>使用如下命令可以将博客部署到GitHub上：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure><br>哈哈，就是这么简单，在浏览器中输入刚刚新建的GitHub项目的网址就能显示你的个人博客啦。（前提是GitHub安装并成功配置）</p>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><hr>
+<p>关于hexo的使用可进入<a href="https://hexo.io/zh-cn/docs/">hexo使用文档</a>，里面详细记载了hexo的配置和操作命令，这样就能够更改博客的头像和名称等等啦。还有有关给hexo配置主题的问题，我将会在下个博客中详细介绍。</p>
+]]></content>
+      <categories>
+        <category>开发基本技能</category>
+        <category>博客</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>Hexo</tag>
+        <tag>安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>神经网络基础1</title>
+    <url>/2020/10/15/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%801/</url>
+    <content><![CDATA[<h1 id="神经网络基础1"><a href="#神经网络基础1" class="headerlink" title="神经网络基础1"></a>神经网络基础1</h1><h3 id="关于iPython笔记本"><a href="#关于iPython笔记本" class="headerlink" title="关于iPython笔记本"></a>关于iPython笔记本</h3><hr>
+<p>iPython Notebook（是jupyter notebook的前称）是嵌入在网页中的交互式编码环境。运行iPython笔记本的方法为在终端（Mac版）输入命令：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure><br>Jupyter notebook的默认端口号为8888，因此在浏览器中输入localhost:8888就能访问。</p>
+<h3 id="使用numpy构建基本函数"><a href="#使用numpy构建基本函数" class="headerlink" title="使用numpy构建基本函数"></a>使用numpy构建基本函数</h3><hr>
+<h4 id="sigmoid-function和np-exp（）"><a href="#sigmoid-function和np-exp（）" class="headerlink" title="sigmoid function和np.exp（）"></a>sigmoid function和np.exp（）</h4><p>sigmoid函数是激活函数的一种，其表达式为：$sigmoid(x) = \frac{1}{1+e^{-x}}$在这里主要对比了np.exp()和math.exp()之间的差别，其目的是为了说明math.exp()主要对单个的数值进行运算，而np.exp()则是对矩阵进行相关的运算。</p>
+<h4 id="Sigmoid-gradient"><a href="#Sigmoid-gradient" class="headerlink" title="Sigmoid gradient"></a>Sigmoid gradient</h4><p>sigmoid函数梯度计算公式为：<script type="math/tex">sigmoid\_derivative(x) = \sigma'(x) = \sigma(x) (1 - \sigma(x))</script>，求梯度的目的主要是要知道曲线在某个方向倾斜程度。在这里将s设为sigmoid(x)，然后再计算$\sigma’(x) = s(1-s)$即可。实现代码如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid_derivative</span>(<span class="params">x</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	功能：求在sigmoid函数中x的梯度</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	x -- 一个标量或者numpy数组</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	ds -- 计算出的梯度</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	s = sigmoid(x) </span><br><span class="line">	ds = s * (<span class="number">1</span> - s)</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> ds</span><br></pre></td></tr></table></figure></p>
+<h4 id="重塑数组"><a href="#重塑数组" class="headerlink" title="重塑数组"></a>重塑数组</h4><p>np.reshape()用于将X重塑为其他尺寸。在计算机科学中，图像由shape为$(length, height, depth = 3)$的3D数组表示。但是，当你读取图像作为算法的输入时，会将其转换为维度为$(length<em>height</em>3, 1)$的向量。换句话说，将3D阵列“展开”或重塑为1D向量。</p>
+<p><strong>练习</strong>：实现<code>image2vector()</code> ,该输入采用维度为(length, height, 3)的输入，并返回维度为(length*height*3, 1)的向量。例如，如果你想将形为（a，b，c）的数组v重塑为维度为(a*b, 3)的向量，则可以执行以下操作：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">v = v.reshape((v.shape[<span class="number">0</span>]*v.shape[<span class="number">1</span>], v.shape[<span class="number">2</span>])) <span class="comment"># v.shape[0] = a ; v.shape[1] = b ; v.shape[2] = c</span></span><br></pre></td></tr></table></figure><br>实现函数如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">image2vector</span>(<span class="params">image</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	iamge -- 一个(length, height, depth)类型的numpy数组</span></span><br><span class="line"><span class="string">	</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	v -- 一个(length*height*depth, 1)类型的向量</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	v = image.reshape(image.shape[<span class="number">0</span>] * image.shape[<span class="number">1</span>] * image.shape[<span class="number">2</span>], <span class="number">1</span>)</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> v</span><br></pre></td></tr></table></figure></p>
+<h4 id="行标准化"><a href="#行标准化" class="headerlink" title="行标准化"></a>行标准化</h4><p>我们在机器学习和深度学习中使用的另一种常见技术是对数据进行标准化。 由于归一化后梯度下降的收敛速度更快，通常会表现出更好的效果。 通过归一化，也就是将x更改为$ \frac{x}{| x|} $（将x的每个行向量除以其范数）。</p>
+<p>以上为作业上内容，但个人还是无法理解归一化后为什么梯度下降的收敛更快。但有一点敢肯定的就是归一化后可以避免计算机计算结果得到大数而导致计算错误，比如算$e^{1000}$后计算机的结果为:<br><img src= "/img/loading.gif" data-lazy-src="/2020/10/15/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%801/e_1000.jpg"><br>从结果中可以看到计算机报错，如果将1000换成是分数，结果就能求出，这是由计算机本身的性能决定的。</p>
+<p>求范数时得用到<a href="https://blog.csdn.net/hqh131360239/article/details/79061535">np.linalg.norm</a>函数。用法在链接中有详细介绍。</p>
+<p><strong>练习</strong>：执行 normalizeRows（）来标准化矩阵的行。 将此函数应用于输入矩阵x之后，x的每一行应为单位长度（即长度为1）向量。<br>函数实现如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalizeRows</span>(<span class="params">x</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	功能：标准化举证的行</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	x -- 一个(n, m)类型的numpy矩阵</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	x -- 标准化后的numpy矩阵</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	x_norm = np.linalg.norm(x, axis = <span class="number">1</span>, keepdims = <span class="literal">True</span>) <span class="comment">#求每行的范数</span></span><br><span class="line">	x = x / x_norm <span class="comment">#更新x矩阵</span></span><br><span class="line">	<span class="keyword">return</span> x</span><br></pre></td></tr></table></figure></p>
+<h4 id="广播和softmax函数"><a href="#广播和softmax函数" class="headerlink" title="广播和softmax函数"></a>广播和softmax函数</h4><p>在numpy中广播是十分重要的，实现了矩阵和数值之间和矩阵和矩阵之间的快速运算，详情见<a href="https://www.runoob.com/numpy/numpy-broadcast.html">numpy广播</a>。</p>
+<p><strong>练习</strong>: 使用numpy实现softmax函数。 你可以将softmax理解为算法需要对两个或多个类进行分类时使用的标准化函数。<br><strong>Instructions</strong>:</p>
+<ul>
+<li><p>$ \text{for } x \in \mathbb{R}^{1\times n} \text{,     } softmax(x) = softmax(\begin{bmatrix}<br>  x_1  &amp;&amp;<br>  x_2 &amp;&amp;<br>  …  &amp;&amp;<br>  x_n<br>\end{bmatrix}) = \begin{bmatrix}<br>   \frac{e^{x_1}}{\sum_{j}e^{x_j}}  &amp;&amp;<br>  \frac{e^{x_2}}{\sum_{j}e^{x_j}}  &amp;&amp;<br>  …  &amp;&amp;<br>  \frac{e^{x_n}}{\sum_{j}e^{x_j}}<br>\end{bmatrix} $ </p>
+</li>
+<li><p>$\text{for a matrix } x \in \mathbb{R}^{m \times n} \text{,  $x_{ij}$ maps to the element in the $i^{th}$ row and $j^{th}$ column of $x$, thus we have: }$  <script type="math/tex">softmax(x) = softmax\begin{bmatrix}
+  x_{11} & x_{12} & x_{13} & \dots  & x_{1n} \\
+  x_{21} & x_{22} & x_{23} & \dots  & x_{2n} \\
+  \vdots & \vdots & \vdots & \ddots & \vdots \\
+  x_{m1} & x_{m2} & x_{m3} & \dots  & x_{mn}
+\end{bmatrix} = \begin{bmatrix}
+  \frac{e^{x_{11}}}{\sum_{j}e^{x_{1j}}} & \frac{e^{x_{12}}}{\sum_{j}e^{x_{1j}}} & \frac{e^{x_{13}}}{\sum_{j}e^{x_{1j}}} & \dots  & \frac{e^{x_{1n}}}{\sum_{j}e^{x_{1j}}} \\
+  \frac{e^{x_{21}}}{\sum_{j}e^{x_{2j}}} & \frac{e^{x_{22}}}{\sum_{j}e^{x_{2j}}} & \frac{e^{x_{23}}}{\sum_{j}e^{x_{2j}}} & \dots  & \frac{e^{x_{2n}}}{\sum_{j}e^{x_{2j}}} \\
+  \vdots & \vdots & \vdots & \ddots & \vdots \\
+  \frac{e^{x_{m1}}}{\sum_{j}e^{x_{mj}}} & \frac{e^{x_{m2}}}{\sum_{j}e^{x_{mj}}} & \frac{e^{x_{m3}}}{\sum_{j}e^{x_{mj}}} & \dots  & \frac{e^{x_{mn}}}{\sum_{j}e^{x_{mj}}}
+\end{bmatrix} = \begin{pmatrix}
+  softmax\text{(first row of x)}  \\
+  softmax\text{(second row of x)} \\
+  ...  \\
+  softmax\text{(last row of x)} \\
+\end{pmatrix}</script></p>
+</li>
+</ul>
+<p>softmax实现如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">softmax</span>(<span class="params">x</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	x -- 一个形状为(n, m)的numpy矩阵</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	s -- 一个形状为(n, m)的值为softmax(x)的numpy矩阵</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	x_exp = np.exp(x)</span><br><span class="line">	x_sum = np.sum(x_exp, axis = <span class="number">1</span>, keepdims = <span class="literal">True</span>) <span class="comment">#对每行exp后的值求和</span></span><br><span class="line">	s = x_exp / x_sum</span><br><span class="line">	<span class="keyword">return</span> s</span><br></pre></td></tr></table></figure><br>之前用pytorch写过手写数字识别的小程序，对于softmax函数映像很深。因为手写数字识别程序主要是通过训练来提高识别到真实数据的概率的方式来输出识别到的数字的。我目前认为softmax主要是将数值归一化来描述概率。</p>
+<h3 id="向量化"><a href="#向量化" class="headerlink" title="向量化"></a>向量化</h3><p>这里介绍了几个实验，目的就是为了说明用矩阵运算处理数据要比单个数值处理的运算速度更加快，这是由计算机的性能决定的，具体是为什么还待日后研究。</p>
+<h4 id="实现L1和L2损失函数"><a href="#实现L1和L2损失函数" class="headerlink" title="实现L1和L2损失函数"></a>实现L1和L2损失函数</h4><p>通俗来讲损失函数主要的功能其实就是求神经网络训练的值和真实值之间的差距，训练神经网络的目的其实就是缩小这个差距来使训练出来的值尽可能接近真实值。<br>L1损失函数公式：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<script type="math/tex">\begin{align*} & L_1(\hat{y}, y) = \sum_{i=0}^m|y^{(i)} - \hat{y}^{(i)}| \end{align*}</script><br>代码实现如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">L2</span>(<span class="params">yhat, y</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	yhat -- 预测值</span></span><br><span class="line"><span class="string">	y -- 真实值</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	loss -- 损失函数求得的损失值</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	loss = np.sum(np.abs(y - yhat))</span><br><span class="line">	<span class="keyword">return</span> loss</span><br></pre></td></tr></table></figure><br>L2损失函数公式：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<script type="math/tex">\begin{align*} & L_2(\hat{y},y) = \sum_{i=0}^m(y^{(i)} - \hat{y}^{(i)})^2 \end{align*}</script><br>代码实现如下：<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">L2</span>(<span class="params">yhat, y</span>):</span></span><br><span class="line">	<span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">	参数：</span></span><br><span class="line"><span class="string">	yhat -- 预测值</span></span><br><span class="line"><span class="string">	y -- 真实值</span></span><br><span class="line"><span class="string">	返回值：</span></span><br><span class="line"><span class="string">	loss -- 损失函数求得的损失值</span></span><br><span class="line"><span class="string">	&quot;&quot;&quot;</span></span><br><span class="line">	loss = np.dot((y - yhat),(y - yhat).T)</span><br><span class="line">	<span class="keyword">return</span> loss</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <categories>
+        <category>人工智能</category>
+        <category>吴恩达视频学习</category>
+        <category>Lesson1</category>
+      </categories>
+      <tags>
+        <tag>人工智能</tag>
+        <tag>深度学习</tag>
+        <tag>神经网络</tag>
       </tags>
   </entry>
 </search>
