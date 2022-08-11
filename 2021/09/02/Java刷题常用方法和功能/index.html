@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Java刷题常用方法和功能 | Hqystar's Blog</title><meta name="description" content="用java刷算法题的时候会用到一些常用的方法，这些方法包括字符串、数组、集合的方法。Java获取数组的长度1234567String[][] data &#x3D; new String[2][5];System.out.println(&quot;第一维数组长度: &quot; + data.length);System.out.println(&quot;第二维数组长度: &quot; + data[0"><meta name="keywords" content="java"><meta name="author" content="Qyun"><meta name="copyright" content="Qyun"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/katong.jpeg"><link rel="canonical" href="https://huanqgingyu.top/2021/09/02/Java%E5%88%B7%E9%A2%98%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E5%92%8C%E5%8A%9F%E8%83%BD/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="Java刷题常用方法和功能"><meta property="og:url" content="https://huanqgingyu.top/2021/09/02/Java%E5%88%B7%E9%A2%98%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E5%92%8C%E5%8A%9F%E8%83%BD/"><meta property="og:site_name" content="Hqystar's Blog"><meta property="og:description" content="用java刷算法题的时候会用到一些常用的方法，这些方法包括字符串、数组、集合的方法。Java获取数组的长度1234567String[][] data &#x3D; new String[2][5];System.out.println(&quot;第一维数组长度: &quot; + data.length);System.out.println(&quot;第二维数组长度: &quot; + data[0"><meta property="og:image" content="https://huanqgingyu.top/img/main_page.jpeg"><meta property="article:published_time" content="2021-09-01T16:00:00.000Z"><meta property="article:modified_time" content="2022-08-11T14:05:30.649Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  hexoversion: '5.1.1',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2022-08-11 22:05:30'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img {
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 5.1.1"><link rel="alternate" href="/atom.xml" title="Hqystar's Blog" type="application/atom+xml">
+</head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" data-lazy-src="/img/katong.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">20</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">15</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">15</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="color"></div><header class="post-bg" id="page-header" style="background-image: url(/img/main_page.jpeg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Hqystar's Blog</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">Java刷题常用方法和功能</div></div><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-01T16:00:00.000Z" title="发表于 2021-09-02 00:00:00">2021-09-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-08-11T14:05:30.649Z" title="更新于 2022-08-11 22:05:30">2022-08-11</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Java%E5%9F%BA%E7%A1%80/">Java基础</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><p>用java刷算法题的时候会用到一些常用的方法，这些方法包括字符串、数组、集合的方法。<br><strong>Java获取数组的长度</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String[][] data = <span class="keyword">new</span> String[<span class="number">2</span>][<span class="number">5</span>];</span><br><span class="line">System.out.println(<span class="string">&quot;第一维数组长度: &quot;</span> + data.length);</span><br><span class="line">System.out.println(<span class="string">&quot;第二维数组长度: &quot;</span> + data[<span class="number">0</span>].length);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 字符数组转成字符串</span></span><br><span class="line"><span class="keyword">char</span>[] ch = &#123;<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>&#125;;</span><br><span class="line">String str = <span class="keyword">new</span> String(ch);</span><br></pre></td></tr></table></figure><br><strong>String类常用方法</strong></p>
+<ul>
+<li>int  length()                                        返回字符串长度</li>
+<li>char  charAt(int index)                     返回指定下标位置的字符</li>
+<li>char[]  toCharArray()                        将字符串转换为字符数组</li>
+<li>String[]  split(String regex)               将字符串按照分割符分割成字符串数组</li>
+<li>Boolean  equals(String str)               判断字符串是否相等</li>
+<li>String  substring(int beginIndex,  int endIndex)  截取字符串（不包括endIndex）</li>
+<li>String  substring(int beginIndex)  截取字符串（包括beginIndex）<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">&quot;Hello world!&quot;</span>;</span><br><span class="line">String str1 = <span class="string">&quot;yun&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> l = str.length(); <span class="comment">// l:12</span></span><br><span class="line"><span class="keyword">char</span> c = str.charAt(<span class="number">1</span>); <span class="comment">// c:&#x27;e&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span>[] cArray = str.toCharArray();</span><br><span class="line"><span class="comment">// cArray:[&#x27;H&#x27;,&#x27;e&#x27;,&#x27;l&#x27;,&#x27;l&#x27;,&#x27;o&#x27;,&#x27; &#x27;,&#x27;w&#x27;,&#x27;o&#x27;,&#x27;r&#x27;,&#x27;l&#x27;,&#x27;d&#x27;,&#x27;!&#x27;]</span></span><br><span class="line"></span><br><span class="line">String[] arr = str.split(<span class="string">&quot; &quot;</span>);</span><br><span class="line"><span class="comment">// arr:[&quot;Hello&quot;,&quot;world!&quot;]</span></span><br><span class="line"></span><br><span class="line">Boolean eq = str1.equals(str); <span class="comment">// eq:false</span></span><br><span class="line">String str2 = str.substring(<span class="number">0</span>, <span class="number">2</span>); <span class="comment">// str2:&quot;He&quot;</span></span><br><span class="line">String str3 = str.substring(<span class="number">2</span>); <span class="comment">// str3:&quot;llo world!&quot;</span></span><br></pre></td></tr></table></figure>
+<strong>StringBuffer</strong><br>StringBuffer 类和 String 类最大的区别在于它的内容和长度都是可以改变的。StringBuffer 类似一个字符容器，当在其中添加或删除字符时，所操作的都是这个字符容器，因此并不会产生新的 StringBuffer 对象。所以当要处理字符串增、删、改操作时一般都是将String类对象转换成StringBuffer 类对象然后再转换成字符串作为返回值。<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始化StringBuffer 类对象(第一种)</span></span><br><span class="line">StringBuffer strBuffer = <span class="keyword">new</span> StringBuffer(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化StringBuffer 类对象(第二种)</span></span><br><span class="line">String str = <span class="string">&quot;abc&quot;</span>;</span><br><span class="line">StringBuffer strBuffer = <span class="keyword">new</span> StringBuffer(str);</span><br></pre></td></tr></table></figure>
+<strong>StringBuffer类常用方法</strong></li>
+<li>int  length()                                        返回字符串实际长度 </li>
+<li>char  charAt(int index)                     返回指定下标位置的字符</li>
+<li>StringBuffer  append(char c)          添加字符到StringBuffer对象中末尾</li>
+<li>StringBuffer  append(String str)          添加字符串到StringBuffer对象中末尾</li>
+<li>StringBuffer  insert(int offset, String str) 在StringBuffer对象中的offset位置插入字符串str</li>
+<li>StringBuffer  deleteCharAt(int index)       移除StringBuffer对象中指定位置的字符</li>
+<li>StringBuffer  delete(int start, int end)       删除StringBuffer对象中指定范围的字符或字符串，区间[start,end)</li>
+<li>StringBuffer  replace(int start, int end, String s)   将StringBuffer对象中指定范围的字符或字符串用新的字符串s进行替换，区间[start, end)</li>
+<li>void  setCharAt(int index, char ch)             修改指定位置index处的字符</li>
+<li>String  toString()                                            返回StringBuffer缓冲区中的字符串对象</li>
+<li>StringBuffer  reverse()                                  将此StringBuffer对象用其反转形式取代 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">String str = <span class="string">&quot;Hello world!&quot;</span>;</span><br><span class="line">StringBuffer strBuffer = <span class="keyword">new</span> StringBuffer(str);</span><br><span class="line"></span><br><span class="line">strBuffer.insert(<span class="number">1</span>, <span class="string">&quot;ttt&quot;</span>); <span class="comment">// strBuffer:&quot;Htttello world!&quot;</span></span><br><span class="line">strBuffer.delete(<span class="number">1</span>, <span class="number">4</span>); <span class="comment">// strBuffer:&quot;Hello world!&quot;</span></span><br><span class="line">strBuffer.deleteCharAt(<span class="number">1</span>); <span class="comment">// strBuffer:&quot;Hllo world!&quot;</span></span><br><span class="line">strBuffer.setCharAt(<span class="number">1</span>, <span class="string">&#x27;t&#x27;</span>); <span class="comment">// strBuffer:&quot;Htlo world!&quot;</span></span><br><span class="line">strBuffer.replace(<span class="number">0</span>, <span class="number">2</span>, <span class="string">&quot;Hel&quot;</span>); <span class="comment">// strBuffer:&quot;Hello world!&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/****************测试append()***************/</span></span><br><span class="line">StringBuffer sBuffer = <span class="keyword">new</span> StringBuffer(<span class="string">&quot;aaa&quot;</span>); <span class="comment">// sBuffer:aaa</span></span><br><span class="line">sBuffer.append(<span class="string">&#x27;b&#x27;</span>); <span class="comment">// sBuffer:aaab</span></span><br><span class="line">sBuffer.append(<span class="string">&quot;ccc&quot;</span>); <span class="comment">// sBuffer:aaabccc</span></span><br><span class="line">String str = <span class="string">&quot;ddd&quot;</span>;</span><br><span class="line">sBuffer.append(str); <span class="comment">// sBuffer:aaabcccddd</span></span><br></pre></td></tr></table></figure>
+<strong>注：</strong>java的String和StringBuffer两个类来封装对字符串的各种操作，存放于java.lang包中，java.lang 包下的类不用导包，在运行时，java.lang包下的类默认导入。<br><strong>List容器常用方法</strong></li>
+<li>add(Object element)              向列表的尾部添加指定的元素</li>
+<li>add(int index, Object element)   在列表的指定位置插入指定元素</li>
+<li>size()                                         返回列表中的元素个数</li>
+<li>get(int index)                           返回列表中指定位置的元素，index从0开始</li>
+<li>set(int i, Object element)      将索引i位置元素替换为元素element并返回被替换的元素</li>
+<li>clear()                                       从列表中移除所有元素</li>
+<li>isEmpty()                                 判断列表是否包含元素，不包含元素则返回 true，否则返回false</li>
+<li>remove(int index)                  移除列表中指定位置的元素，并返回被删元素</li>
+</ul>
+<p>将数组转成list集合：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String[] array = &#123; <span class="string">&quot;a&quot;</span>, <span class="string">&quot;b&quot;</span>, <span class="string">&quot;c&quot;</span>&#125;;</span><br><span class="line">ArrayList&lt;String&gt; arrayList = <span class="keyword">new</span> ArrayList&lt;String&gt;(Arrays.asList(array));</span><br></pre></td></tr></table></figure></p>
+<p><strong>Stack容器常用方法</strong></p>
+<ul>
+<li>Boolean  empty()     若栈为空则返回true，否则返回false</li>
+<li>E  peek()                     查看当前的栈顶元素</li>
+<li>E  pop()                       删除当前的栈顶元素，并将其作为返回值返回</li>
+<li>E  push(E e)                添加该数据到栈顶</li>
+</ul>
+<p><strong>PriorityQueue容器常用方法</strong></p>
+<ul>
+<li>offer(E e)   将指定元素插入此优先队列</li>
+<li>poll()           移除并返回堆顶元素</li>
+<li>peek()         获取堆顶元素</li>
+<li>size()           返回元素个数</li>
+<li>clear()         清空</li>
+</ul>
+<p>offer()方法和add()方法的区别：两者都是往队列尾部插入元素，不同的是，当超出队列界限的时候，add（）方法是抛出异常让你处理，而offer（）方法是直接返回false</p>
+<p>PriorityQueue初始化时默认创建的是小根堆，所以创建大根堆的方法为：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PriorityQueue&lt;Integer&gt; q = <span class="keyword">new</span> PriorityQueue&lt;&gt;((o1, o2) -&gt; (o2 - o1));</span><br></pre></td></tr></table></figure></p>
+<p><strong>ArrayDeque容器常用方法</strong></p>
+<ul>
+<li>offer() - 将指定的元素插入ArrayDeque双端队列的末尾</li>
+<li>offerFirst() - 在ArrayDeque双端队列的开始处插入指定的元素</li>
+<li>offerLast() - 将指定的元素插入ArrayDeque双端队列的末尾</li>
+<li>getFirst() - 返回ArrayDeque双端队列的第一个元素</li>
+<li>getLast() - 返回ArrayDeque双端队列的最后一个元素</li>
+<li>peek() - 返回ArrayDeque双端队列的第一个元素</li>
+<li>peekFirst() - 返回ArrayDeque双端队列的第一个元素（等效于peek()）</li>
+<li>peekLast() - 返回ArrayDeque双端队列的最后一个元素</li>
+<li>poll() - 返回并删除ArrayDeque双端队列的第一个元素</li>
+<li>pollFirst() - 返回并删除ArrayDeque双端队列的第一个元素（等效于poll()）</li>
+<li>pollLast() - 返回并删除ArrayDeque双端队列的最后一个元素</li>
+<li>size() - 返回ArrayDeque双端队列的长度</li>
+</ul>
+<p><strong>Map容器常用方法</strong></p>
+<ul>
+<li>V  get(Object key)      返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回null</li>
+<li>V  put(K key, V value) 在容器中新增键值对，若存在相同的键则覆盖原来的值，返回原来的值</li>
+<li>V  remove(Object key) 如果存在一个键的映射关系，则将其从此映射中移除，返回移除的值，不存在则返回null</li>
+<li>Boolean containsKey(Object key) 如果 Map包含指定键的映射，则返回 true</li>
+<li>V  getOrDefault(Object key,  V defaultValue) 当Map集合中有这个key时，就返回key对应的值，如果没有就返回默认值defaultValue。</li>
+<li>Set<K>  keySet()            返回此映射中包含的键的Set集合</K></li>
+</ul>
+<p>Map容器的迭代操作：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">map.put(<span class="string">&quot;一&quot;</span>, <span class="string">&quot;one&quot;</span>);</span><br><span class="line">map.put(<span class="string">&quot;二&quot;</span>, <span class="string">&quot;two&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取key的set集合</span></span><br><span class="line">Set&lt;String&gt; keySet = map.keySet();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建迭代器</span></span><br><span class="line">Iterator&lt;String&gt; it = keySet.iterator();</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">  <span class="comment">//获取每一个key</span></span><br><span class="line">  String key = it.next();</span><br><span class="line">  <span class="comment">//通过key获取对应的value</span></span><br><span class="line">  String value = map.get(key);</span><br><span class="line">  System.out.println(key+<span class="string">&quot;=&quot;</span>+value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/java/">java</a></div><div class="post_share"><div class="social-share" data-image="/img/main_page.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/06/05/python%E5%88%97%E8%A1%A8%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E5%92%8C%E5%8A%9F%E8%83%BD/"><img class="next-cover" data-lazy-src="/img/main_page.jpeg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">python列表常用方法和功能</div></div></a></div></nav></article></main><footer id="footer" data-type="color"><div id="footer-wrap"></div></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-generator-search" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    loader: {
+      source: {
+        '[tex]/amsCd': '[tex]/amscd'
+      }
+    },
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  var script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></div></body></html>
